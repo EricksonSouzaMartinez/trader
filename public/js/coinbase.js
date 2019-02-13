@@ -9,8 +9,8 @@ $("#comecar-coinbase").click(function(){
 	pegaDolar();
 	analisaCoinbase();
 	$(".USD-BRL").text($(".price").text() * $(".dolar").text());
-	//SyncDados();
-	},3000);	
+	//SyncDadosCoinbase();
+	},1000);	
 });
 
 function pegaDadoscoinbase(data) {
@@ -38,7 +38,7 @@ var dolar = (data[0]['bid']);
  $(".dolar").text(dolar);
 }
 
-function SyncDados() {
+function SyncDadosCoinbase() {
 	setInterval(function(){
 	var quantidadeNegociadaCoinbase = $(".volume").text();
 	var precoUnitarioCoinbase = parseInt($(".price").text());
@@ -129,19 +129,19 @@ function analisaCoinbase() {
 		corpo.removeClass("gray");
 	}else if(diferencaValorCoinbase > 700){
 		$(".dica-coinbase").text("ate "+diferencaValorCoinbase+" reais");
-				corpo.addClass("green");
+		corpo.addClass("Violet");
         corpo.removeClass("red");
-				corpo.removeClass("yelloW");
-				corpo.removeClass("orange");
+		corpo.removeClass("yelloW");
+		corpo.removeClass("orange");
         corpo.removeClass("blue");
         corpo.removeClass("purple");
         corpo.removeClass("gray");
 	}else if(diferencaValorCoinbase < 0 && diferencaValorCoinbase > -100){
 		$(".dica-coinbase").text("esta caindo "+diferencaValorCoinbase);
-				corpo.addClass("green");
+		corpo.addClass("green");
         corpo.removeClass("red");
-				corpo.removeClass("yelloW");
-				corpo.removeClass("orange");
+		corpo.removeClass("yelloW");
+		corpo.removeClass("orange");
         corpo.removeClass("blue");
         corpo.removeClass("purple");
         corpo.removeClass("gray");

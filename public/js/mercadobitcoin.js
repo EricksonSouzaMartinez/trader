@@ -7,8 +7,9 @@ $("#comecar-mercadobitcoin").click(function(){
 	 });
 	 valorinputMercadobitcoin();
 	 analisaMercadobitcoin();
+	 SyncDadosMercadobitcoin();
 	},3000);
-//SyncDados();
+
 });
 //https://www.mercadobitcoin.net/api-doc/
 
@@ -52,7 +53,7 @@ function obterHora() {
 	return informacoes;
 }
 
-function SyncDados() {
+function SyncDadosMercadobitcoin() {
 	setInterval(function(){
 	var maiorpreco = $(".high").text();
 	var menorPreco = $(".low").text();
@@ -80,7 +81,7 @@ function SyncDados() {
      }).fail(function(){
     $(".dica").text("Falha de conexão");
    });
-      },100000); 
+      },1000); 
 }
 function valorinputMercadobitcoin(){
 	resultado =  parseInt($(".last").text()) - parseInt($(".valor-compra-mercadobitcoin").val());
@@ -90,7 +91,7 @@ function valorinputMercadobitcoin(){
 
 function analisaMercadobitcoin() {
 	var diferencaValormercadobitcoin = valorinputMercadobitcoin();
-	if(diferencaValormercadobitcoin > 100 && diferencaValormercadobitcoin < 200){
+	if(diferencaValormercadobitcoin > 0 && diferencaValormercadobitcoin < 200){
 		$(".dica-mercadobitcoin").text("ate "+diferencaValormercadobitcoin +" reais a mais");
 		mercadobitcoin.addClass("orange");
 		mercadobitcoin.removeClass("yelloW");
@@ -151,7 +152,7 @@ function analisaMercadobitcoin() {
 		mercadobitcoin.removeClass("gray");
 	}else if(diferencaValormercadobitcoin > 700){
 		$(".dica-mercadobitcoin").text("ate "+diferencaValormercadobitcoin+" reais");
-		mercadobitcoin.addClass("green");
+		mercadobitcoin.addClass("Violet");
 		mercadobitcoin.removeClass("red");
 		mercadobitcoin.removeClass("yelloW");
 		mercadobitcoin.removeClass("orange");
@@ -167,8 +168,9 @@ function analisaMercadobitcoin() {
 		mercadobitcoin.removeClass("blue");
 		mercadobitcoin.removeClass("purple");
 		mercadobitcoin.removeClass("gray");
-	}else if(diferencaValormercadobitcoin < - 100){
-		$(".dica-mercadobitcoin").text("o valor esta caindo muito"+diferencaValormercadobitcoin)
+	}else if(diferencaValormercadobitcoin < -200){
+		$(".dica-mercadobitcoin").text("o valor esta caindo muito"+diferencaValormercadobitcoin);
+		alert("Caiu" +diferencaValormercadobitcoin);
 		mercadobitcoin.addClass("gray");
 		mercadobitcoin.removeClass("red");
 		mercadobitcoin.removeClass("green");

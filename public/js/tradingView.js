@@ -1,0 +1,1 @@
+// https://br.tradingview.com/symbols/BTCUSD/
