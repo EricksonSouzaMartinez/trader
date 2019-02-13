@@ -1,10 +1,12 @@
-function guardandoDados(){
-    valor = [];
-    preco = parseInt($(".last").text());
-    valor.push(preco);
-    valor.push(preco);
-    valor[valor.length] = parseInt($(".last").text());
-    valor.push(preco);
-    valor[valor.length] = parseInt($(".last").text());
-    return valor;
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
+var valor = [];
+
+function setPreco(){
+var preco = parseInt($(".last").text());
+return preco;
 }
+
+
+valor.unshift(setPreco()); // seta no inicio do array
+
+valor.push(setPreco()); // seta no final do array
