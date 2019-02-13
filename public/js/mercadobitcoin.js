@@ -8,7 +8,7 @@ $("#comecar-mercadobitcoin").click(function(){
 	 valorinputMercadobitcoin();
 	 analisaMercadobitcoin();
 	 //SyncDadosMercadobitcoin();
-	},3000);
+	},5000);
 
 });
 //https://www.mercadobitcoin.net/api-doc/
