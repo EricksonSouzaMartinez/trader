@@ -12,6 +12,9 @@ api.lista = function(req, res) {
 };
 
 api.insere = function(req, res){
+    db.remove({}, { multi: true }, function (err, numRemoved) {
+    });
+    
     db.update(req.body.placar, function(err, newDoc) {
         if(err) return console.log(err);
         console.log('Sincronizado com sucesso: ' + newDoc._id);
