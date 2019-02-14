@@ -8,7 +8,7 @@ $("#comecar-mercadobitcoin").click(function(){
 	 valorinputMercadobitcoin();
 	 analisaMercadobitcoin();
 	 //SyncDadosMercadobitcoin();
-	},5000);
+	},2000);
 
 });
 //https://www.mercadobitcoin.net/api-doc/
@@ -62,7 +62,7 @@ function SyncDadosMercadobitcoin() {
 	var maiorPrecodeOferta = $(".buy").text();
 	var menorPrecodeOferta = $(".sell").text();
 	var time = $(".date").text();
-    var placar = [];   
+    var placar = [];   13599
     var score = {
 	    high: maiorpreco,
 		low: menorPreco,
@@ -93,6 +93,7 @@ function analisaMercadobitcoin() {
 	var diferencaValormercadobitcoin = valorinputMercadobitcoin();
 	if(diferencaValormercadobitcoin > 0 && diferencaValormercadobitcoin < 200){
 		$(".dica-mercadobitcoin").text("ate "+diferencaValormercadobitcoin +" reais a mais");
+		
 		mercadobitcoin.addClass("orange");
 		mercadobitcoin.removeClass("yelloW");
 		mercadobitcoin.removeClass("red");
@@ -161,6 +162,7 @@ function analisaMercadobitcoin() {
 		mercadobitcoin.removeClass("gray");
 	}else if(diferencaValormercadobitcoin < 0 && diferencaValormercadobitcoin > -100){
 		$(".dica-mercadobitcoin").text("esta caindo "+diferencaValormercadobitcoin);
+		alert("Passou");
 		mercadobitcoin.addClass("green");
 		mercadobitcoin.removeClass("red");
 		mercadobitcoin.removeClass("yelloW");

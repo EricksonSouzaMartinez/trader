@@ -1,12 +1,25 @@
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
-var valor = [];
-
-function setPreco(){
-var preco = parseInt($(".last").text());
-return preco;
+function getValor() {
+    var valor = [];
+    return valor;
 }
 
+function setPreco() {
+    var preco = parseInt($(".last").text());
+    return preco;
+}
+let valor = getValor();
+var preco = setPreco();
 
-valor.unshift(setPreco()); // seta no inicio do array
+var existe = valor.indexOf(preco) = preco;
 
-valor.push(setPreco()); // seta no final do array
+function inserirDados() {
+    if (existe) {
+        // console.log("igual");
+    } else {
+        if (preco) {
+            valor[valor.length] = preco;
+            console.log(valor);
+        }
+    }
+}
