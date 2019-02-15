@@ -32,7 +32,7 @@ window.onload = function () {
 
 			setInterval(function(){		
 		// define o avanço horizontal
-		x += (novoX() + 5) ;
+		x += (novoX() + 1) ;
 		//gera um valor aleatorio
 		var valor = parseInt($(".last").text());		
 		//desenha uma linha ate a posição gerada

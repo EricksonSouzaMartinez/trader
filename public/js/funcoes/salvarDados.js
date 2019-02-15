@@ -1,22 +1,12 @@
 $("#sincronizar").click(function () {
     SyncDadosMercadobitcoin()
 });
-var valor = [];
+
 function SyncDadosMercadobitcoin() {
     setInterval(function () {
-        var valor = [];
-        var preco = $(".last").text();
-        function inserirDados() {            
-            if (preco) {
-                valor.push(preco);               
-                var novoarray = [...new Set(valor)];               
-            }
-            return novoarray;
-        }
-
         var placar = [];
         var score = {
-            valore: inserirDados()
+            valores: inserirDados()
         }
 
         placar.push(score);
