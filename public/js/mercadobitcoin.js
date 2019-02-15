@@ -7,6 +7,7 @@ $("#comecar-mercadobitcoin").click(function(){
 	 });
 	 valorinputMercadobitcoin();
 	 analisaMercadobitcoin();
+	 inserirDados();
 	 //SyncDadosMercadobitcoin();
 	},2000);
 
