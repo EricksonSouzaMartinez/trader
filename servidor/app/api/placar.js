@@ -17,7 +17,7 @@ api.insere = function(req, res){
     
     db.insert(req.body.placar, function(err) {
         if(err) return console.log(err);
-        console.log('Sincronizado com sucesso');
+        //console.log('Sincronizado com sucesso');
         res.json({});
     });
 }

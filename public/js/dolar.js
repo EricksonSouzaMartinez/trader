@@ -8,5 +8,11 @@ function pegaDolar() {
 }
 
 function pegaDadosDolar(data) {
-    console.log(data);    
+    var dolar = data[0];
+    teste(dolar);  
 }
+
+function teste() {
+    return valor;
+}
+console.log(teste());

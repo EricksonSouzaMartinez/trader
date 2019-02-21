@@ -4,17 +4,7 @@ function novoX() {
 }
 $("#ver-grafico").click(function () {
 	$("#grafico").toggle();
-	//setInterval(function () {
-		var novo = $.get("http://localhost:3000/placar", function (date) {
-				this.responseText;
-			
-		})
-			.fail(function () {
-				$(".dica").text("Falha de conexão");
-			});
-			console.log(novo);
-			console.log(novo.responseJSON['0']['novoarray']);
-//	},200000);
+	dados();
 });
 
 window.onload = function () {
@@ -23,7 +13,7 @@ window.onload = function () {
 		var altura = 690; // altura canvas
 		var largura = 1900;//largura canvas
 		// posicao horizontal grafico
-		var y = 14000;
+		var y = 14900;
 		var valor; //pontos do grafico
 		var x = 0;
 
@@ -42,7 +32,7 @@ window.onload = function () {
 			// define o avanço horizontal
 			x += (novoX() + 0,1);
 			//gera um valor aleatorio
-			var valor = parseInt($(".last").text());
+			var valor = 0;
 			//desenha uma linha ate a posição gerada
 			ctx.lineTo(x, y - valor);
 			ctx.stroke();

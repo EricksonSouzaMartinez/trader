@@ -1,5 +1,7 @@
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
 $("#sincronizar").click(function () {
-    SyncDadosMercadobitcoin()
+    SyncDadosMercadobitcoin();
+    console.log("sincronizando");
 });
 
 
@@ -7,17 +9,17 @@ var valor = [];
 
 function SyncDadosMercadobitcoin() {
     setInterval(function () {
-        var preco = $(".last").text();
-        if (preco) {
-            valor.push(preco);
+        
+        var volume = $(".vol").text();
+        var total = (volume);
+        if (total) {
+            valor.push(total);
              var novoarray = [...new Set(valor)];
          }
-
-         //console.log(novoarray)
-
-        var placar = [];
+        
+         var placar = [];
         var score = {
-            novoarray
+           novoarray           
         }
 
         placar.push(score);
@@ -25,10 +27,10 @@ function SyncDadosMercadobitcoin() {
             placar: placar
         }
         
-        $.post("http://localhost:3000/placar", dados, function () {
+        $.post("http://192.168.1.45:3000/placar", dados, function () {
            // console.log("Salvou os Usuarios no servidor");
         }).fail(function () {
             $(".dica").text("Falha de conexão");
         });
-    }, 1000);
+    },1000);
 }

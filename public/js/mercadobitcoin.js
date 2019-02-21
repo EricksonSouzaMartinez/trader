@@ -7,35 +7,26 @@ $("#comecar-mercadobitcoin").click(function () {
 			});
 		valorinputMercadobitcoin();
 		analisaMercadobitcoin();
-		inserirDados();
-	}, 2000);
+		//inserirDados();
+	},200);
 
 });
 //https://www.mercadobitcoin.net/api-doc/
 
 function pegaDadosmercadobitcoin(data) {
-	var maiorpreco = $(".high");
-	var menorPreco = $(".low");
 	var quantidadeNegociada = $(".vol");
 	var precoUnitario = $(".last");
-	var maiorPrecodeOferta = $(".buy");
-	var menorPrecodeOferta = $(".sell");
+
 	var time = $(".date");
 
-	var high = (data.ticker['high']);
-	var low = (data.ticker['low']);
+
 	var vol = (data.ticker['vol']);
 	var last = (data.ticker['last']);
-	var buy = (data.ticker['buy']);
-	var sell = (data.ticker['sell']);
 	var date = obterHora();
 
-	maiorpreco.text(high);
-	menorPreco.text(low);
+
 	quantidadeNegociada.text(vol);
 	precoUnitario.text(last);
-	maiorPrecodeOferta.text(buy);
-	menorPrecodeOferta.text(sell);
 	time.text(date);
 
 	var convert = $(".date").text();
@@ -49,7 +40,8 @@ function obterHora() {
 	var ano = data.getFullYear();
 	var hora = data.getHours();
 	var minuto = data.getMinutes();
-	var informacoes = (dia + "/" + mes + "/" + ano + " " + hora + ":" + minuto);
+	var segundos = data.getSeconds();
+	var informacoes = (dia + "/" + mes + "/" + ano + "-" + hora + ":" + minuto+":"+segundos);
 	return informacoes;
 }
 
